@@ -1,0 +1,39 @@
+{% extends 'layout.html'%}
+{%block main%}
+<ol class="breadcrumb">
+    <li><a href="#">管理首页</a></li>
+    <li>内容管理</li>
+    <li class="active">编辑</li>
+</ol>
+<form  method="post">
+    <div class="form-group">
+        <label for="sort">分类</label>
+        <!--{{content.sort.name}}-->
+        <select name="sort" id="sort" class="form-control">
+            <!--<option value="aaa">aaa</option>-->
+            <!--<option value="bbb">bbb</option>-->
+            <!--<option value="ccc">ccc</option>-->
+            {%for sort in sorts%}
+            {%if content.sort._id.toString()==sort._id.toString()%}}
+                <option value="{{sort._id.toString()}}" selected>{{sort.name}}</option>
+            {%else%}
+                <option value="{{sort._id.toString()}}">{{sort.name}}</option>
+            {%endif%}
+            {%endfor%}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="title">标题</label>
+        <input type="text" class="form-control" id="title" name="title" value="{{content.title}}">
+    </div>
+    <div class="form-group">
+        <label for="description">简介</label>
+        <textarea name="description" id="description" cols="30" rows="10" class="form-control" value="{{content.description}}" placeholder="{{content.description}}"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="content">内容</label>
+        <textarea name="content" id="content" cols="30" rows="10" class="form-control" value="{{content.content}}" placeholder="{{content.content}}"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">提交</button>
+</form>
+{%endblock%}

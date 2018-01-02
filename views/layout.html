@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的首页</title>
+    <link rel="stylesheet" href="/public/css/main.css"/>
+    <script src="/public/js/jquery-1.9.1.min.js"></script>
+    <script src="/public/js/index.js"></script>
+    <script src="/public/js/content.js"></script>
+</head>
+<body>
+<div class="banner">
+    <div class="banner-nav">
+        <ul>
+            {%if sort==''%}
+            <li class="select"><a href="/">首页</a></li>
+            {%else%}
+            <li><a href="/">首页</a></li>
+            {%endif%}
+            {% for sortic in sorts %}
+            {%if sort==sortic._id.toString()%}
+            <li class="select"><a href="/?sort={{sortic._id.toString()}}">{{sortic.name}}</a></li>
+            {%else%}
+            <li><a href="/?sort={{sortic._id.toString()}}">{{sortic.name}}</a></li>
+            {%endif%}
+            {% endfor%}
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <!--内容左侧-->
+    {%block content%}
+    {%endblock%}
+    <!--内容右侧-->
+    <div class="content-right">
+        <p>欢迎来到我的博客!</p>
+        {% if userInfo._id %}
+        <div class="success-box">
+            <p class="userinfo">{{userInfo.username}}</p>
+            {% if userInfo.isAdmin%}
+            <p class="welcomeinfo" style="color:green">您好！管理员</p>
+            <a href="/admin">进入后台管理系统</a>
+            <p><a href="javascript:;" id="exits">点击退出</a></p>
+            {% else %}
+            <p class="welcomeinfo" style="color:blue">您好！欢迎光临我的博客</p>
+            <p><a href="javascript:;" id="exits">点击退出</a></p>
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="login-box">
+            <p>欢迎登录</p>
+            <label for="">用户名:</label> <input type="text" name="username"/><br>
+            <label for="">密码:</label><input type="password" name="password"/><br/>
+            <label for=""></label><input type="button" value="登录" class="loginbtn"/><button style="margin-left:10px">注册</button>
+            <p class="messageInfo" style="color:red"></p>
+        </div>
+        {% endif %}
+        <div class="regist-box" style="display:none">
+            <p>注册本系统</p>
+            <label for="">用户名:</label> <input type="text" name="username"/><br>
+            <label for="">密码:</label><input type="password" name="password"/><br/>
+            <label for="">确认密码:</label><input type="password" name="repassword"/><br/>
+            <label for=""></label><input type="button" value="注册" class="resiger"/><button style="margin-left:10px">去登录</button>
+            <p class="messageInfo" style="color:red"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

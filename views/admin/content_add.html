@@ -1,0 +1,33 @@
+{% extends 'layout.html'%}
+{% block main%}
+<ol class="breadcrumb">
+    <li><a href="#">管理首页</a></li>
+    <li class="active">添加内容</li>
+</ol>
+<form  method="post">
+    <div class="form-group">
+        <label for="sort">分类</label>
+        <select name="sort" id="sort" class="form-control">
+            <!--<option value="aaa">aaa</option>-->
+            <!--<option value="bbb">bbb</option>-->
+            <!--<option value="ccc">ccc</option>-->
+            {%for sort in sorts%}
+                <option value="{{sort._id.toString()}}">{{sort.name}}</option>
+            {%endfor%}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="title">标题</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="请输入标题">
+    </div>
+    <div class="form-group">
+        <label for="description">简介</label>
+        <textarea name="description" id="description" cols="30" rows="10" class="form-control" placeholder="请输入简介"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="content">内容</label>
+        <textarea name="content" id="content" cols="30" rows="10" class="form-control" placeholder="请输入内容"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">提交</button>
+</form>
+{%endblock%}

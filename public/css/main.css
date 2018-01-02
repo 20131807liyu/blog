@@ -1,0 +1,50 @@
+/*p{color:green;}*/
+label{display:inline-block;width:54px;height:30px;line-height:30px;text-align:center}
+/*.regist-box{display:none;}*/
+/*.success-box{display:none;}*/
+body{background:#fafafa;}
+*{margin:0;padding:0}
+ul{list-style:none}
+a{text-decoration:none;color:#666;}
+.banner{width:100%;height:60px;line-height:60px;margin-bottom:20px;background:#fff;}
+.banner .banner-nav{width:950px;margin:0 auto}
+.banner-nav ul{width:100%;overflow:hidden;}
+.banner-nav ul li{width:20%;text-align:center;float:left;}
+.banner-nav ul li.select{border-bottom:2px solid red;}
+.banner-nav ul li.select a{color:red}
+.banner-nav ul li:hover{border-bottom:2px solid red;}
+.banner-nav ul li:hover a{color:red}
+/*内容模块*/
+.content{overflow:hidden;width:1100px;margin:0 auto;}
+/*内容左侧*/
+.content-left{float:left;width:75%;box-sizing:border-box;padding:10px 0;background:#fff;margin-right:2%}
+.new-list{width:100%;box-sizing:border-box;padding:10px 5px;}
+.new-con{width:100%;box-sizing:border-box;padding:10px 5px;}
+.new-list li{width:98%;margin:0 auto;border:1px solid #ddd;box-sizing:border-box;padding:5px 10px;margin-top:12px;overflow:hidden}
+.items p{line-height:28px;}
+.titleInfo{text-align:center;font-size:16px;}
+.authors{color:#ddd;font-size:12px;text-align:center;}
+.author{color:red}
+.sumtol{color:red}
+.maincon{font-size:14px;}
+.more a{float:left;color:#fff;background:green;margin-top:5px;font-size:14px;padding:0 10px;}
+/*发表评论*/
+.commit{text-align:center;margin:10px auto;}
+.commit-explain{margin-top:10px;}
+.commit-explain p{color:#333;font-size:14px;}
+/*留言*/
+.newslist{width: 100%;box-sizing:border-box;padding:10px 10px;}
+.newslist li{width:100%;box-sizing:border-box;border:1px solid #eee;padding:5px;margin-top:5px;}
+.header p:nth-of-type(1){float:left;}
+.header p:nth-of-type(2){float:right;}
+.bodys{clear:both;}
+/*分页*/
+.pages{padding:5px 10px;text-align: center}
+.pages li{float:left;}
+.pages li.prev{float:left;}
+.pages li.center{padding:0px 40px;}
+.pages li.next{float:right}
+/*内容右侧*/
+.content-right{float:right;width:23%;background:#fff;box-sizing:border-box;padding:10px;}
+/*内容内页分页*/
+.pager li{float:left;width:33%}

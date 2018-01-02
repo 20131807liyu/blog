@@ -1,0 +1,44 @@
+{% extends 'layout.html'%}
+{%block content%}
+<div class="content-left">
+    <div class="new-list">
+    <ul>
+        {%for content in contents%}
+        <li>
+            <div class="items">
+                <p class="titleInfo">{{content.title}}</p>
+                <p class="authors">作者:<span class="author">{{content.user.username}}</span>&nbsp;&nbsp;浏览量:<span class="sumtol">{{content.views}}&nbsp;</span>评论:<span>{{content.comments.length}}</span></p>
+                <p class="maincon">{{content.description}}</p>
+                <p class="more"><a href="/views?contentId={{content._id.toString()}}">查看更多</a></p>
+            </div>
+        </li>
+        {%endfor%}
+    </ul>
+    </div>
+    <div class="pages">
+    <ul>
+        <li class="prev">
+            {%if page<=1%}
+            <a href="javascript:;">没有上一页</a>
+            {%else%}
+            <a href="/?sort={{sort}}&&page={{page-1}}">上一页</a>
+            {%endif%}
+        </li>
+        <!--<li class="center"><a href="javascript:;">当前第{{page}}页,共{{pages}}页，每页显示{{limit}}条,共{{count}}条记录</a></li>-->
+        {%if pages>0%}
+        <li class="center"><a href="javascript:;">{{page}}/{{pages}}</a></li>
+        {%else%}
+        <li class="center"><a href="javascript:;"></a></li>
+        {%endif%}
+        <li class="next">
+        {%if page>=pages%}
+        <a href="javascript:;">没有下一页</a>
+        {%else%}
+        <a href="/?sort={{sort}}&page={{page+1}}">下一页</a>
+        {%endif%}
+
+        </li>
+    </ul>
+    </div>
+</div>
+{%endblock%}

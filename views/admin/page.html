@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>分页</title>
+</head>
+<body>
+<nav aria-label="...">
+    <ul class="pager">
+        <li class="previous"><a href="{{url}}?page={{page-1}}"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+        <li>共{{count}}条记录，每页显示{{limit}}条，总共{{pages}}页，当前{{page}}页</li>
+        <li class="next"><a href="{{url}}?page={{page+1}}">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>
+</body>
+</html>
